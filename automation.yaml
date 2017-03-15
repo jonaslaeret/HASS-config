@@ -1,0 +1,148 @@
+#####################automation.yaml##########################
+
+########## Climate component corrections #############
+- alias: 'Living room thermostat ON'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:  
+    - condition: template
+      value_template: '{{ float(states.sensor.livingroom_setpoint.state) > float(states.sensor.living_room_temperature.state) + 0.1 }}'
+  action:
+    service: switch.turn_on
+    entity_id: group.livingarea_radiators
+- alias: 'Living room thermostat OFF'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:  
+    - condition: template
+      value_template: '{{ float(states.sensor.livingroom_setpoint.state) < float(states.sensor.living_room_temperature.state) - 0.1 }}'
+  action:
+    service: switch.turn_off
+    entity_id: group.livingarea_radiators
+    
+- alias: 'Bedroom thermostat ON'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:  
+    - condition: template
+      value_template: '{{ float(states.sensor.bedroom_setpoint.state) > float(states.sensor.bedroom_temperature.state) + 0.1 }}'
+  action:
+    service: switch.turn_on
+    entity_id: switch.fibaro_system_fgwpe_wall_plug_switch_8_0
+- alias: 'Bedroom thermostat OFF'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:  
+    - condition: template
+      value_template: '{{ float(states.sensor.bedroom_setpoint.state) < float(states.sensor.bedroom_temperature.state) - 0.1 }}'
+  action:
+    service: switch.turn_off
+    entity_id: switch.fibaro_system_fgwpe_wall_plug_switch_8_0
+    
+- alias: 'Guest room thermostat ON'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:  
+    - condition: template
+      value_template: '{{ float(states.sensor.guestroom_setpoint.state) > float(states.sensor.__temperature_43_1.state) + 0.1 }}'
+  action:
+    service: switch.turn_on
+    entity_id: switch.fibaro_system_fgwpe_wall_plug_switch_32_0
+- alias: 'Guest room thermostat OFF'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 0
+  condition:  
+    - condition: template
+      value_template: '{{ float(states.sensor.guestroom_setpoint.state) < float(states.sensor.__temperature_43_1.state) - 0.1 }}'
+  action:
+    service: switch.turn_off
+    entity_id: switch.fibaro_system_fgwpe_wall_plug_switch_32_0
+    
+############# Turn off all lights #################    
+- alias: 'All lights off'
+  trigger:
+    platform: state
+    entity_id: input_boolean.all_lights_off
+    from: 'off'
+    to: 'on'
+  action:
+    - service: light.turn_off
+    - service: switch.turn_off
+      entity_id: switch.fibaro_system_fgwpe_wall_plug_switch_41_0
+    - service: switch.turn_off
+      entity_id: switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.all_lights_off
+- alias: 'Away mode on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.away_mode
+    from: 'off'
+    to: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      temperature: 5
+- alias: 'Away mode off'
+  trigger:
+    platform: state
+    entity_id: input_boolean.away_mode
+    from: 'on'
+    to: 'off'
+  action:
+    service: climate.set_temperature
+    data:
+      temperature: 20
+      
+- alias: 'Bedroom alarm'
+  trigger:
+    platform: time
+    minutes: '/1'
+    seconds: 0    
+  condition:
+    condition: and
+    conditions:
+      - condition: template
+        value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
+      - condition: or
+        conditions:
+          - condition: and
+            conditions:
+              - condition: state
+                entity_id: input_boolean.bedroom_alarm_switch
+                state: 'on'
+              - condition: state
+                entity_id: input_boolean.bedroom_alarm_weekday
+                state: 'on'
+              - condition: time
+                weekday:
+                  - mon
+                  - tue
+                  - wed
+                  - thu
+                  - fri
+          - condition: and
+            conditions:
+              - condition: state
+                entity_id: input_boolean.bedroom_alarm_switch
+                state: 'on'
+              - condition: state
+                entity_id: input_boolean.bedroom_alarm_weekday
+                state: 'off'    
+  action:
+    - service: script.turn_on
+      entity_id: script.alarm_script_fade      
+    - service: script.turn_on
+      entity_id: script.sonos_play_radio

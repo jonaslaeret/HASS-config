@@ -1,0 +1,6 @@
+######################input_slider.yaml#########################
+alarm_fader:
+  name: Fade time
+  initial: 15
+  min: 0
+  max: 30

@@ -1,0 +1,11 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!*.yaml
+
+# ...even if they are in subdirectories
+!*/
+www/custom_ui/.gitignore
+secrets.yaml

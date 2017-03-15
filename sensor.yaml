@@ -1,0 +1,121 @@
+- platform: speedtest
+  minute:
+   - 2
+   - 17
+   - 32
+   - 47
+  monitored_conditions:
+   - ping
+   - download
+   - upload
+- platform: cpuspeed
+  name: CPU
+- platform: systemmonitor
+  resources:
+   - type: disk_use_percent
+     arg: /
+   - type: disk_use_percent
+     arg: /var/log
+   - type: memory_use_percent
+   - type: memory_use
+   - type: memory_free
+   - type: processor_use
+   - type: swap_use_percent
+   - type: swap_use
+   - type: swap_free
+   - type: last_boot
+   - type: since_last_boot
+   - type: network_in
+     arg: eth0
+   - type: network_out
+     arg: eth0
+   - type: packets_in
+     arg: eth0
+   - type: packets_out
+     arg: eth0
+   - type: ipv4_address
+     arg: eth0
+   - type: ipv6_address
+     arg: eth0
+   - type: network_in
+     arg: eth1
+   - type: network_out
+     arg: eth1
+   - type: packets_in
+     arg: eth1
+   - type: packets_out
+     arg: eth1
+   - type: ipv4_address
+     arg: eth1
+   - type: ipv6_address
+     arg: eth1
+- platform: time_date
+  display_options:
+   - 'time'
+   - 'date'
+   - 'date_time'
+   - 'time_date'
+   - 'time_utc'
+   - 'beat'
+- platform: mqtt
+  name: "Living room temperature"
+  state_topic: "Home/livingroom/sensor1"
+  unit_of_measurement: "°C"
+- platform: mqtt
+  name: "Bedroom temperature"
+  state_topic: "Temp12846772"
+  unit_of_measurement: "°C"
+- platform: mqtt
+  name: "Bedroom humidity"
+  state_topic: "Humid12846772"
+  unit_of_measurement: "%"
+- platform: mqtt
+  name: "Guest room temperature"
+  state_topic: "Temp12841218"
+  unit_of_measurement: "°C"
+- platform: mqtt
+  name: "Guest room humidity"
+  state_topic: "Humid12841218"
+  unit_of_measurement: "%"
+- platform: template
+  sensors:
+    alarm_hour:
+      friendly_name: 'Hour'
+      value_template: '{{ states.input_slider.alarmhour.state|round(0)|string }}'
+    alarm_minutes:
+      friendly_name: 'Minutes'
+      value_template: '{{ states.input_slider.alarmminutes.state|round(0)|string }}'
+    alarm_time:
+      friendly_name: 'Alarm'
+      value_template: '{% if states.input_select.bedroom_alarm_hours.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_hours.state|round(0)|string }}:{% if states.input_select.bedroom_alarm_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_min.state|round(0)|string }}'
+    time:
+      value_template: '{{ now().strftime("%H:%M")}}'
+- platform: template
+  sensors:
+    livingroom_setpoint:
+      value_template: '{{ states.climate.livingroom.attributes.temperature }}'
+      friendly_name: 'Living room setpoint'
+      unit_of_measurement: '°C'
+- platform: template
+  sensors:
+    bedroom_setpoint:
+      value_template: '{{ states.climate.bedroom.attributes.temperature }}'
+      friendly_name: 'Bedroom setpoint'
+      unit_of_measurement: '°C'
+- platform: template
+  sensors:
+    guestroom_setpoint:
+      value_template: '{{ states.climate.guestroom.attributes.temperature }}'
+      friendly_name: 'Guest room setpoint'
+      unit_of_measurement: '°C'
+- platform: yweather
+  monitored_conditions:
+   - weather
+   - weather_current
+   - temp_min
+   - temp_max
+   - wind_speed
+   - pressure
+   - visibility
+   - humidity
+   - temperature

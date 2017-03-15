@@ -1,0 +1,128 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret latitude
+  longitude: !secret longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 0
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Oslo
+
+  customize: !include customize.yaml
+# Show links to resources in log and frontend
+
+# Enables the frontend
+frontend:
+
+recorder:
+  db_url: !secret mysql_path
+
+influxdb:
+  host: localhost
+  database: !secret influx_name
+  username: !secret influx_user
+  password: !secret influx_pw
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret api_password
+  trusted_networks:
+    - !secret trusted_ip
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:
+
+mqtt:
+  broker: !secret mqtt_broker
+
+# Sensors
+sensor: !include sensor.yaml
+
+# MQTT lights
+light: !include mqtt_lights.yaml
+
+# zwave
+zwave:
+  device_config: !include zwave_device_config.yaml
+  usb_path: /dev/ttyUSB0
+  polling_interval:  120000
+
+input_slider: !include inputs/input_slider.yaml
+input_boolean: !include inputs/input_boolean.yaml
+input_select: !include inputs/input_select.yaml
+
+#Config page
+config:
+
+# Groups and Views
+group: !include groups.yaml
+
+# Scripts
+script: !include script.yaml
+# Automation.
+automation: !include automation.yaml
+
+# Text to speech
+tts:
+  - platform: google
+
+panel_iframe:
+  ruter:
+    title: 'Ruter'
+    icon: mdi:train
+    url: !secret ruter_stop
+
+media_player:
+  - platform: sonos
+    hosts:
+      - 167772200
+      - 167772220
+
+# Thermostats
+climate:
+  - platform: generic_thermostat
+    name: livingroom
+    heater: group.livingarea_radiators
+    target_sensor: sensor.living_room_temperature
+    target_temp: 25
+    min_temp: 15
+    max_temp: 25
+    min_cycle_duration:
+      seconds: 5
+
+  - platform: generic_thermostat
+    name: bedroom
+    heater: switch.fibaro_system_fgwpef_wall_plug_switch_8_0
+    target_sensor: sensor.bedroom_temperature
+    target_temp: 22
+    min_temp: 15
+    max_temp: 25
+    min_cycle_duration:
+      seconds: 5
+
+  - platform: generic_thermostat
+    name: guestroom
+    heater: switch.fibaro_system_fgwpef_wall_plug_switch_32_0
+    target_sensor: sensor.guest_room_temperature
+    target_temp: 20
+    min_temp: 15
+    max_temp: 25
+    min_cycle_duration:
+      seconds: 5

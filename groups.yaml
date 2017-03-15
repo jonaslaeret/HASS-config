@@ -1,0 +1,183 @@
+##############groups.yaml#################
+##VIEWS
+default_view:
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.yahoo_weather
+    - group.speed
+    - goup.time_date
+    - group.sensor_pi
+    - group.blackout
+lighting_view:
+  view: yes
+  icon: mdi:lightbulb
+  entities:
+   - group.livingroom_lighting
+   - group.kitchen_lighting
+   - group.bedroom_lighting
+   - group.bathroom_lighting
+   - group.hallway_lighting
+   - group.guestroom_lighting
+environment_view:
+  view: yes
+  icon: mdi:radiator
+  entities:
+   - group.livingroom_environment
+   - group.bedroom_environment
+   - group.guestroom_environment
+media_view:
+  view: yes
+  icon: mdi:headphones
+  entities:
+   - media_player.bedroom
+   - media_player.guest_room
+   - media_player.m4strup
+settings_view:
+  view: yes
+  icon: mdi:settings
+  entities:
+   - group.bedroom_alarm
+   - group.away_mode_group
+
+#GROUPS
+time_date:
+  name: Time & Date
+  entities:
+    - sensor.date
+    - sensor.time
+    - sensor.time_utc
+speed:
+  name: Internet Connection
+  entities:
+    - sensor.speedtest_ping
+    - sensor.speedtest_download
+    - sensor.speedtest_upload
+    - sensor.fastcom_download
+sensor_pi:
+  name: Server
+  entities:
+    - sensor.cpu_use
+    - sensor.disk_use_
+    - sensor.disk_use_varlog
+    - sensor.ram_use
+    - sensor.ram_free
+    - sensor.swap_use
+    - sensor.swap_free
+    - sensor.last_boot
+    - sensor.since_last_boot
+    - sensor.received_eth0
+    - sensor.sent_eth0
+blackout:
+  name: All lights off
+  view: no
+  entities:
+    - input_boolean.all_lights_off
+yahoo_weather:
+  name: Weather Today
+  view: no
+  entities:
+    - sensor.yweather_current
+    - sensor.yweather_humidity
+    - sensor.yweather_pressure
+    - sensor.yweather_temperature
+    - sensor.yweather_temperature_max
+    - sensor.yweather_temperature_min
+    - sensor.yweather_visibility
+    - sensor.yweather_wind_speed
+all_entities:
+  entities:
+   - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
+   - light.fibaro_system_fgd212_dimmer_2_level_42_0
+   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
+   - light.fibaro_system_fgd212_dimmer_2_level_10_0
+   - light.aeotec_zw098_led_bulb_level_23_0
+   - light.fibaro_system_fgd212_dimmer_2_level_30_0
+   - light.fibaro_system_fgd212_dimmer_2_level_31_0
+   - light.fibaro_system_fgd212_dimmer_2_level_28_0
+   - light.fibaro_system_fgd212_dimmer_2_level_29_0
+   - climate.livingroom
+   - climate.bedroom
+   - climate.guestroom
+all_lights:
+  entities:
+   - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
+   - light.fibaro_system_fgd212_dimmer_2_level_42_0
+   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
+   - light.fibaro_system_fgd212_dimmer_2_level_10_0
+   - light.aeotec_zw098_led_bulb_level_23_0
+   - light.fibaro_system_fgd212_dimmer_2_level_30_0
+   - light.fibaro_system_fgd212_dimmer_2_level_31_0
+   - light.fibaro_system_fgd212_dimmer_2_level_28_0
+   - light.fibaro_system_fgd212_dimmer_2_level_29_0
+all_temp:
+  entities:
+   - climate.livingroom
+   - climate.bedroom
+   - climate.guestroom
+livingroom_lighting:
+  name: Living room
+  entities:
+   - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
+   - light.fibaro_system_fgd212_dimmer_2_level_42_0
+   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
+   - light.brick_wall_accent
+kitchen_lighting:
+  name: Kitchen
+  entities:
+   - light.fibaro_system_fgd212_dimmer_2_level_10_0
+bedroom_lighting:
+  name: Bedroom
+  entities:
+   - light.aeotec_zw098_led_bulb_level_23_0
+bathroom_lighting:
+  name: Bathroom
+  entities:
+   - light.fibaro_system_fgd212_dimmer_2_level_30_0
+   - light.fibaro_system_fgd212_dimmer_2_level_31_0
+hallway_lighting:
+  name: Hallway
+  entities:
+   - light.fibaro_system_fgd212_dimmer_2_level_28_0
+guestroom_lighting:
+  name: Guest room
+  entities:
+   - light.fibaro_system_fgd212_dimmer_2_level_29_0
+livingroom_environment:
+  name: Living room & Kitchen
+  entities:
+   - sensor.living_room_temperature
+   - switch.fibaro_system_fgwpef_wall_plug_switch_3_0
+   - switch.fibaro_system_fgwpef_wall_plug_switch_7_0
+   - climate.livingroom
+bedroom_environment:
+  name: Bedroom
+  entities:
+   - sensor.bedroom_humidity
+   - sensor.bedroom_temperature
+   - switch.fibaro_system_fgwpef_wall_plug_switch_8_0
+   - climate.bedroom
+guestroom_environment:
+  name: Guest room
+  entities:
+   - sensor.guest_room_humidity
+   - sensor.guest_room_temperature
+   - switch.fibaro_system_fgwpef_wall_plug_switch_32_0
+   - climate.guestroom
+livingarea_radiators:
+  name: Living area radiators
+  entities:
+   - switch.fibaro_system_fgwpef_wall_plug_switch_3_0
+   - switch.fibaro_system_fgwpef_wall_plug_switch_7_0
+bedroom_alarm:
+  name: Bedroom alarm
+  entities:
+   - input_boolean.bedroom_alarm_switch
+   - input_boolean.bedroom_alarm_weekday
+   - input_slider.alarm_fader
+   - input_select.bedroom_alarm_hours
+   - input_select.bedroom_alarm_min
+away_mode_group:
+  name: Away mode
+  entities:
+   - input_boolean.away_mode

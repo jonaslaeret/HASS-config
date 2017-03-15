@@ -1,0 +1,151 @@
+###############script.yaml################
+weather_summary:
+ alias: Weather Summary
+ sequence:
+  - service: tts.google_say
+    data_template:
+      entity_id: media_player.guest_room
+      message: >
+        Good morning! It's currently {{states.sensor.yweather_current.state}} and {{states.sensor.yweather_temperature.state|round}} degrees in Oslo. The temperature will reach {{states.sensor.yweather_temperature_max.state|round}} degrees celsius.
+sonos_play_radio:
+  sequence:
+  - alias: "Radio play"
+    service: media_player.play_media
+    entity_id: media_player.bedroom
+    data:
+      media_content_id: x-rincon-mp3radio://stream.bauermedia.no/radionorge.mp3
+      media_content_type: music
+alarm_script_fade:
+  alias: Alarm fader
+  sequence:
+    - alias: Wakeup Light 1
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 10
+    - alias: Sonos 1
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.02
+    - alias: Hallway lamp on
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_28_0
+    - alias: Bathroom lamp on
+      service: light.turn_on
+      entity_id: group.bathroom_lighting
+    - alias: Kitchen lamp on
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_10_0
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 2
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 20
+    - alias: Sonos 2
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.04
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 3
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 30
+    - alias: Sonos 3
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.06
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 4
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 40
+    - alias: Sonos 4
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.08
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 5
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 50
+    - alias: Sonos 5
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.10
+    - alias: Sonos Pause
+      service: media_player.sonos_snapshot
+      entity_id: media_player.bedroom
+    - alias: Report Weather
+      service: tts.google_say
+      data_template:
+        entity_id: media_player.bedroom
+        message: >
+         Good morning! It's currently {{states.sensor.yweather_current.state}} and {{states.sensor.yweather_temperature.state|round}} degrees in Oslo. The temperature will reach {{states.sensor.yweather_temperature_max.state|round}} degrees celsius.
+    - delay: '00:00:08'
+    - alias: Sonos Restore
+      service: media_player.sonos_restore
+      entity_id: media_player.bedroom
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 6
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 60
+    - alias: Sonos 6
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.12
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 7
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 70
+    - alias: Sonos 7
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.14
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 8
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 80
+    - alias: Sonos 8
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.16
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 9
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 90
+    - alias: Sonos 9
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.18
+    - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
+    - alias: Wakeup Light 10
+      service: light.turn_on
+      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      data:
+        brightness: 100
+    - alias: Sonos 10
+      service: media_player.volume_set
+      entity_id: media_player.bedroom
+      data:
+        volume_level: 0.20
