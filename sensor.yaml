@@ -88,7 +88,7 @@
     alarm_time:
       friendly_name: 'Alarm'
       value_template: '{% if states.input_select.bedroom_alarm_hours.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_hours.state|round(0)|string }}:{% if states.input_select.bedroom_alarm_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_min.state|round(0)|string }}'
-    time:
+    current_time:
       value_template: '{{ now().strftime("%H:%M")}}'
 - platform: template
   sensors:

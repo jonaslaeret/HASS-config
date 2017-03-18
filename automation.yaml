@@ -80,7 +80,7 @@
   action:
     - service: light.turn_off
     - service: switch.turn_off
-      entity_id: switch.fibaro_system_fgwpe_wall_plug_switch_41_0
+      entity_id: switch.fibaro_system_fgwpef_wall_plug_switch_41_0
     - service: switch.turn_off
       entity_id: switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
     - service: input_boolean.turn_off
@@ -105,17 +105,17 @@
     service: climate.set_temperature
     data:
       temperature: 20
-      
+
 - alias: 'Bedroom alarm'
   trigger:
     platform: time
     minutes: '/1'
-    seconds: 0    
+    seconds: 0
   condition:
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ states.sensor.time.state == states.sensor.alarm_time.state }}'
+        value_template: '{{ states.sensor.current_time.state == states.sensor.alarm_time.state }}'
       - condition: or
         conditions:
           - condition: and

@@ -18,8 +18,6 @@ sensor.yweather_wind_speed:
 switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2:
   icon: mdi:lightbulb
   friendly_name: Globe
-sensor.fibaro_system_fgwpef_wall_plug_power_8_4:
-  friendly_name: Bedroom radiator power
 sensor.__luminance_43_3:
   friendly_name: Luminance
 sensor.__relative_humidity_43_5:
@@ -117,12 +115,20 @@ switch.fibaro_system_fgwpef_wall_plug_switch_41_0:
   friendly_name: Oslo lamp
 switch.fibaro_system_fgwpef_wall_plug_switch_3_0:
   friendly_name: Living room radiator
+sensor.fibaro_system_fgwpef_wall_plug_power_3_4:
+  friendly_name: Living room radiator power
 switch.fibaro_system_fgwpef_wall_plug_switch_32_0:
-  friendly_name: Radiator
+  friendly_name: Guest room radiator power
+sensor.fibaro_system_fgwpef_wall_plug_power_32_4:
+  friendly_name: Guest room radiator power
 switch.fibaro_system_fgwpef_wall_plug_switch_7_0:
   friendly_name: Kitchen radiator
+sensor.fibaro_system_fgwpef_wall_plug_power_7_4:
+  friendly_name: Kitchen radiator power
 switch.fibaro_system_fgwpef_wall_plug_switch_8_0:
-  friendly_name: Radiator
+  friendly_name: Bedroom radiator
+sensor.fibaro_system_fgwpef_wall_plug_power_8_4:
+  friendly_name: Bedroom radiator power
 media_player.m4strup:
   friendly_name: Chromecast
 media_player.bedroom:
