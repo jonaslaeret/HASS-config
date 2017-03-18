@@ -4,3 +4,53 @@ alarm_fader:
   initial: 1
   min: 0
   max: 5
+night_temp_gr:
+  name: Night temp guest room
+  initial: 15
+  min: 0
+  max: 20
+night_temp_lr:
+  name: Night temp livingroom
+  initial: 15
+  min: 0
+  max: 20
+night_temp_br:
+  name: Night temp bedroom
+  initial: 15
+  min: 0
+  max: 20
+day_temp_gr:
+  name: Day temp guest room
+  initial: 20
+  min: 15
+  max: 25
+day_temp_lr:
+  name: Day temp livingroom
+  initial: 20
+  min: 15
+  max: 25
+day_temp_br:
+  name: Day temp bedroom
+  initial: 20
+  min: 15
+  max: 25
+night_time_hr:
+  name: Night time hours
+  initial: 23
+  min: 0
+  max: 23
+night_time_min:
+  name: Night time min
+  initial: 0
+  min: 0
+  max: 59
+day_time_hr:
+  name: Day time hours
+  initial: 5
+  min: 0
+  max: 23
+day_time_min:
+  name: Day time min
+  initial: 0
+  min: 0
+  max: 59

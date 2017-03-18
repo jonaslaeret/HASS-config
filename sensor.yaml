@@ -90,6 +90,12 @@
       value_template: '{% if states.input_select.bedroom_alarm_hours.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_hours.state|round(0)|string }}:{% if states.input_select.bedroom_alarm_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_min.state|round(0)|string }}'
     current_time:
       value_template: '{{ now().strftime("%H:%M")}}'
+    day_time:
+      friendly_name: 'Day time'
+      value_template: '{% if states.input_slider.day_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.day_time_hr.state|round(0)|string }}:{% if states.input_slider.day_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.day_time_min.state|round(0)|string }}'
+    night_time:
+      friendly_name: 'Night time'
+      value_template: '{% if states.input_slider.night_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_hr.state|round(0)|string }}:{% if states.input_slider.night_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_min.state|round(0)|string }}'      
 - platform: template
   sensors:
     livingroom_setpoint:

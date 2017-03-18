@@ -43,6 +43,13 @@ settings_view:
    - group.night_mode
 
 #GROUPS
+night_mode:
+  name: Night mode
+  entities:
+    - input_slider.night_time_hr
+    - input_slider.night_time_min
+    - input_slider.day_time_hr
+    - input_slider.day_time_min
 scenes:
   name: Scenes
   entities:
