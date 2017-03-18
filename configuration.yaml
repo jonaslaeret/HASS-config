@@ -112,7 +112,7 @@ climate:
     name: bedroom
     heater: switch.fibaro_system_fgwpef_wall_plug_switch_8_0
     target_sensor: sensor.bedroom_temperature
-    target_temp: 22
+    target_temp: 20
     min_temp: 15
     max_temp: 25
     min_cycle_duration:
