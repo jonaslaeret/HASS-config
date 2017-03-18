@@ -94,6 +94,7 @@ media_player:
     hosts:
       - 167772200
       - 167772220
+scene: !include scenes.yaml
 
 # Thermostats
 climate:

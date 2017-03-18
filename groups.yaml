@@ -43,6 +43,11 @@ settings_view:
    - group.night_mode
 
 #GROUPS
+scenes:
+  name: Scenes
+  entities:
+    - scene.TV_mode
+    - scene.Bright_mode
 time_date:
   name: Time & Date
   entities:
