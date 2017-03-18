@@ -152,6 +152,8 @@ livingroom_environment:
    - switch.fibaro_system_fgwpef_wall_plug_switch_3_0
    - switch.fibaro_system_fgwpef_wall_plug_switch_7_0
    - climate.livingroom
+   - sensor.fibaro_system_fgwpef_wall_plug_power_3_4
+   - sensor.fibaro_system_fgwpef_wall_plug_power_7_4
 bedroom_environment:
   name: Bedroom
   entities:
@@ -159,6 +161,7 @@ bedroom_environment:
    - sensor.bedroom_temperature
    - switch.fibaro_system_fgwpef_wall_plug_switch_8_0
    - climate.bedroom
+   - sensor.fibaro_system_fgwpef_wall_plug_power_8_4
 guestroom_environment:
   name: Guest room
   entities:
@@ -166,6 +169,7 @@ guestroom_environment:
    - sensor.guest_room_temperature
    - switch.fibaro_system_fgwpef_wall_plug_switch_32_0
    - climate.guestroom
+   - sensor.fibaro_system_fgwpef_wall_plug_power_32_4
 livingarea_radiators:
   name: Living area radiators
   entities:
