@@ -4,11 +4,10 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.yahoo_weather
-    - group.speed
     - goup.time_date
-    - group.sensor_pi
+    - group.yahoo_weather
     - group.blackout
+    - group.scenes
 lighting_view:
   view: yes
   icon: mdi:lightbulb
@@ -37,8 +36,11 @@ settings_view:
   view: yes
   icon: mdi:settings
   entities:
+   - group.speed
+   - group.sensor_pi
    - group.bedroom_alarm
    - group.away_mode_group
+   - group.night_mode
 
 #GROUPS
 time_date:
