@@ -27,7 +27,12 @@ influxdb:
   password: !secret influx_pw
 
 http:
-  # Uncomment this to add a password (recommended!)
+#  cors_allowed_origins:
+#    - https://google.com
+#    - https://home-assistant.io
+#  ssl_certificate: !secret certificate_path
+#  ssl_key: !secret key_path
+#  login_attempts_threshold: 5
   api_password: !secret api_password
   trusted_networks:
     - !secret trusted_ip
@@ -43,6 +48,10 @@ conversation:
 # Enables support for tracking state changes over time.
 history:
 
+# Logger
+logger:
+  default: error
+
 # View all events in a logbook
 logbook:
 
@@ -57,6 +66,12 @@ sensor: !include sensor.yaml
 
 # MQTT lights
 light: !include mqtt_lights.yaml
+
+switch:
+  - platform: mqtt
+    name: bedroom_motion
+    command_topic: "Mot664073"
+    state_topic: "Mot664073"
 
 # zwave
 zwave:
@@ -102,11 +117,13 @@ climate:
     name: livingroom
     heater: group.livingarea_radiators
     target_sensor: sensor.living_room_temperature
-    target_temp: 25
+    target_temp: 20
     min_temp: 15
     max_temp: 25
     min_cycle_duration:
       seconds: 5
+    keep_alive:
+      minutes: 5
 
   - platform: generic_thermostat
     name: bedroom
@@ -117,6 +134,8 @@ climate:
     max_temp: 25
     min_cycle_duration:
       seconds: 5
+    keep_alive:
+      minutes: 5
 
   - platform: generic_thermostat
     name: guestroom
@@ -127,3 +146,5 @@ climate:
     max_temp: 25
     min_cycle_duration:
       seconds: 5
+    keep_alive:
+      minutes: 5

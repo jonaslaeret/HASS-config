@@ -1,4 +1,6 @@
 ################input_boolean.yaml##############
+night_mode_toggle:
+  name: Night mode
 bedroom_alarm_switch:
   name: Bedroom alarm
   initial: off
@@ -6,19 +8,19 @@ bedroom_alarm_switch:
 bedroom_alarm_weekday:
   name: Weekdays
   initial: off
-  icon: mdi:alarm    
+  icon: mdi:alarm
 guestroom_alarm_switch:
   name: Guest room alarm
   initial: off
-  icon: mdi:alarm  
+  icon: mdi:alarm
 guestroom_alarm_weekday:
   name: Weekdays
   initial: off
-  icon: mdi:alarm  
+  icon: mdi:alarm
 away_mode:
   name: Away mode
   initial: off
-  icon: mdi:home-outline 
+  icon: mdi:home-outline
 all_lights_off:
   name: Turn off all lights
   icon: mdi:lightbulb-outline

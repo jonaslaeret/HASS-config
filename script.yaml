@@ -1,4 +1,20 @@
 ###############script.yaml################
+
+############## Motion detected ##############
+motion_detected:
+  alias: Motion Detected
+  sequence:
+    - alias: Turn on Hallway lights
+      service: light.turn_on
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_28_0
+      data:
+        brightness: 20
+    - delay: '00:05:00'
+    - alias: Turn off Hallway lights
+      service: light.turn_off
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_28_0
+
+############## Weather summary ##############
 weather_summary:
  alias: Weather Summary
  sequence:
@@ -7,6 +23,8 @@ weather_summary:
       entity_id: media_player.guest_room
       message: >
         Good morning! It's currently {{states.sensor.yweather_current.state}} and {{states.sensor.yweather_temperature.state|round}} degrees in Oslo. The temperature will reach {{states.sensor.yweather_temperature_max.state|round}} degrees celsius.
+
+############## Sonos play radio ##############
 sonos_play_radio:
   sequence:
   - alias: "Radio play"
@@ -15,6 +33,8 @@ sonos_play_radio:
     data:
       media_content_id: x-rincon-mp3radio://stream.bauermedia.no/radionorge.mp3
       media_content_type: music
+
+############## Alarm fade ##############
 alarm_script_fade:
   alias: Alarm fader
   sequence:
@@ -80,7 +100,7 @@ alarm_script_fade:
       service: media_player.volume_set
       entity_id: media_player.bedroom
       data:
-        volume_level: 0.10
+        volume_level: 0.09
     - alias: Sonos Pause
       service: media_player.sonos_snapshot
       entity_id: media_player.bedroom
@@ -99,53 +119,53 @@ alarm_script_fade:
       service: light.turn_on
       entity_id: light.aeotec_zw098_led_bulb_level_23_0
       data:
-        brightness: 60
+        brightness: 90
     - alias: Sonos 6
       service: media_player.volume_set
       entity_id: media_player.bedroom
       data:
-        volume_level: 0.12
+        volume_level: 0.10
     - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 7
       service: light.turn_on
       entity_id: light.aeotec_zw098_led_bulb_level_23_0
       data:
-        brightness: 70
+        brightness: 130
     - alias: Sonos 7
       service: media_player.volume_set
       entity_id: media_player.bedroom
       data:
-        volume_level: 0.14
+        volume_level: 0.11
     - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 8
       service: light.turn_on
       entity_id: light.aeotec_zw098_led_bulb_level_23_0
       data:
-        brightness: 80
+        brightness: 170
     - alias: Sonos 8
       service: media_player.volume_set
       entity_id: media_player.bedroom
       data:
-        volume_level: 0.16
+        volume_level: 0.12
     - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 9
       service: light.turn_on
       entity_id: light.aeotec_zw098_led_bulb_level_23_0
       data:
-        brightness: 90
+        brightness: 210
     - alias: Sonos 9
       service: media_player.volume_set
       entity_id: media_player.bedroom
       data:
-        volume_level: 0.18
+        volume_level: 0.13
     - delay: '00:{{ states.input_slider.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 10
       service: light.turn_on
       entity_id: light.aeotec_zw098_led_bulb_level_23_0
       data:
-        brightness: 100
+        brightness: 255
     - alias: Sonos 10
       service: media_player.volume_set
       entity_id: media_player.bedroom
       data:
-        volume_level: 0.20
+        volume_level: 0.14

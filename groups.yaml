@@ -32,6 +32,11 @@ media_view:
    - media_player.bedroom
    - media_player.guest_room
    - media_player.m4strup
+flower_view:
+  view: yes
+  icon: mdi:flower
+  entities:
+    - group.chili
 settings_view:
   view: yes
   icon: mdi:settings
@@ -40,9 +45,22 @@ settings_view:
    - group.sensor_pi
    - group.bedroom_alarm
    - group.away_mode_group
-   - group.night_mode
+   - group.washing_machine
 
 #GROUPS
+washing_machine:
+  name: Washing machine control
+  entities:
+   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0   
+   - sensor.fibaro_system_fgwpef_wall_plug_power_41_4
+chili:
+  name: Chili plant
+  entities:
+    - sensor.chili_moisture
+    - sensor.chili_light_intensity
+    - sensor.chili_temperature
+    - sensor.chili_conductivity
+    - sensor.chili_battery
 night_mode:
   name: Night mode
   entities:
@@ -117,7 +135,6 @@ all_lights:
   entities:
    - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
    - light.fibaro_system_fgd212_dimmer_2_level_42_0
-   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
    - light.fibaro_system_fgd212_dimmer_2_level_10_0
    - light.aeotec_zw098_led_bulb_level_23_0
    - light.fibaro_system_fgd212_dimmer_2_level_30_0
@@ -134,11 +151,11 @@ livingroom_lighting:
   entities:
    - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
    - light.fibaro_system_fgd212_dimmer_2_level_42_0
-   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
    - light.brick_wall_accent
 kitchen_lighting:
   name: Kitchen
   entities:
+   - light.glass_cabinet_lights
    - light.fibaro_system_fgd212_dimmer_2_level_10_0
 bedroom_lighting:
   name: Bedroom
@@ -161,6 +178,7 @@ livingroom_environment:
   name: Living room & Kitchen
   entities:
    - sensor.living_room_temperature
+   - sensor.living_room_humidity
    - switch.fibaro_system_fgwpef_wall_plug_switch_3_0
    - switch.fibaro_system_fgwpef_wall_plug_switch_7_0
    - climate.livingroom
@@ -171,6 +189,8 @@ bedroom_environment:
   entities:
    - sensor.bedroom_humidity
    - sensor.bedroom_temperature
+   - sensor.bedroom_co2
+   - switch.bedroom_motion
    - switch.fibaro_system_fgwpef_wall_plug_switch_8_0
    - climate.bedroom
    - sensor.fibaro_system_fgwpef_wall_plug_power_8_4

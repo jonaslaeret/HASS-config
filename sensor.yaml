@@ -1,3 +1,13 @@
+- platform: miflora
+  name: Chili
+  mac: "C4:7C:8D:63:59:AD"
+  median: 3
+  monitored_conditions:
+   - temperature
+   - moisture
+   - light
+   - conductivity
+   - battery
 - platform: speedtest
   minute:
    - 2
@@ -59,16 +69,24 @@
    - 'beat'
 - platform: mqtt
   name: "Living room temperature"
-  state_topic: "Home/livingroom/sensor1"
-  unit_of_measurement: "°C"
-- platform: mqtt
-  name: "Bedroom temperature"
   state_topic: "Temp12846772"
   unit_of_measurement: "°C"
 - platform: mqtt
-  name: "Bedroom humidity"
+  name: "Living room humidity"
   state_topic: "Humid12846772"
   unit_of_measurement: "%"
+- platform: mqtt
+  name: "Bedroom temperature"
+  state_topic: "Temp664073"
+  unit_of_measurement: "°C"
+- platform: mqtt
+  name: "Bedroom humidity"
+  state_topic: "Humid664073"
+  unit_of_measurement: "%"
+- platform: mqtt
+  name: "Bedroom CO2"
+  state_topic: "CO2664073"
+  unit_of_measurement: "ppm"
 - platform: mqtt
   name: "Guest room temperature"
   state_topic: "Temp12841218"
@@ -95,7 +113,7 @@
       value_template: '{% if states.input_slider.day_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.day_time_hr.state|round(0)|string }}:{% if states.input_slider.day_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.day_time_min.state|round(0)|string }}'
     night_time:
       friendly_name: 'Night time'
-      value_template: '{% if states.input_slider.night_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_hr.state|round(0)|string }}:{% if states.input_slider.night_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_min.state|round(0)|string }}'      
+      value_template: '{% if states.input_slider.night_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_hr.state|round(0)|string }}:{% if states.input_slider.night_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_min.state|round(0)|string }}'
 - platform: template
   sensors:
     livingroom_setpoint:

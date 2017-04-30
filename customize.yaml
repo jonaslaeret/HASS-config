@@ -112,7 +112,9 @@ light.fibaro_system_fgd212_dimmer_2_level_42_0:
     max: 255
   friendly_name: Light chain
 switch.fibaro_system_fgwpef_wall_plug_switch_41_0:
-  friendly_name: Oslo lamp
+  friendly_name: Washing machine
+sensor.fibaro_system_fgwpef_wall_plug_power_41_4:
+  friendly_name: Washing machine power
 switch.fibaro_system_fgwpef_wall_plug_switch_3_0:
   friendly_name: Living room radiator
 sensor.fibaro_system_fgwpef_wall_plug_power_3_4:
