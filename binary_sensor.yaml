@@ -1,0 +1,5 @@
+- platform: octoprint
+  name: Printer
+  monitored_conditions:
+   - Printing
+   - Printing Error

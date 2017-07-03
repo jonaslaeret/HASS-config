@@ -37,6 +37,11 @@ flower_view:
   icon: mdi:flower
   entities:
     - group.chili
+printer_view:
+  view: yes
+  icon: mdi:printer-3d
+  entities:
+   - group.printer
 settings_view:
   view: yes
   icon: mdi:settings
@@ -48,6 +53,18 @@ settings_view:
    - group.washing_machine
 
 #GROUPS
+printer:
+  name: 3D printer
+  entities:
+    - binary_sensor.printer_printing
+    - binary_sensor.printer_printing_error
+    - sensor.printer_status_actual_bed_temp
+    - sensor.printer_status_actual_tool0_temp
+    - sensor.printer_status_current_state
+    - sensor.printer_status_job_percentage
+    - sensor.printer_status_target_bed_temp
+    - sensor.printer_status_target_tool0_temp
+    - camera.octoprint
 washing_machine:
   name: Washing machine control
   entities:

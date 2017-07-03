@@ -63,6 +63,7 @@ mqtt:
 
 # Sensors
 sensor: !include sensor.yaml
+binary_sensor: !include binary_sensor.yaml
 
 # MQTT lights
 light: !include mqtt_lights.yaml
@@ -110,6 +111,14 @@ media_player:
       - 167772200
       - 167772220
 scene: !include scenes.yaml
+
+# Octoprint
+octoprint:
+  host: !secret octoprint_host
+  api_key: !secret octoprint_api
+
+# Cameras
+camera: !include cameras.yaml
 
 # Thermostats
 climate:
