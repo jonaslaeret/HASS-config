@@ -108,8 +108,9 @@ panel_iframe:
 media_player:
   - platform: sonos
     hosts:
-      - 167772200
-      - 167772220
+      - 10.0.0.60
+      - 10.0.0.13
+
 scene: !include scenes.yaml
 
 # Octoprint
