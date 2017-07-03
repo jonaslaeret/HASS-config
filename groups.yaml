@@ -208,6 +208,7 @@ livingroom_lighting:
    - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
    - light.fibaro_system_fgd212_dimmer_2_level_42_0
    - light.brick_wall_accent
+   - light.camera_lamp
 kitchen_lighting:
   name: Kitchen
   entities:

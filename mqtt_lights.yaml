@@ -4,6 +4,12 @@
   command_topic: "state_cmd_1-552304"
   brightness_command_topic: "state_cmd_1-552304"
   brightness_state_topic: "led1_fb-552304"
+- platform: mqtt
+  name: "Camera lamp"
+  state_topic: "state_fb_1-552711"
+  command_topic: "state_cmd_1-552711"
+  brightness_command_topic: "state_cmd_1-552711"
+  brightness_state_topic: "led1_fb-552711"
 - platform: mqtt_json
   name: Glass cabinet lights
   state_topic: "home/rgb1"
