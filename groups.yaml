@@ -4,7 +4,7 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - goup.time_date
+    - group.time_date
     - group.yahoo_weather
     - group.blackout
     - group.scenes
