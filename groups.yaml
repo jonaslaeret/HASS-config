@@ -150,6 +150,8 @@ all_entities:
    - climate.guestroom
 all_lights:
   entities:
+   - light.oslo_lamp
+   - light.tradfri_bulb_e27_opal_1000lm
    - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
    - light.fibaro_system_fgd212_dimmer_2_level_42_0
    - light.fibaro_system_fgd212_dimmer_2_level_10_0
@@ -166,12 +168,14 @@ all_temp:
 livingroom_lighting:
   name: Living room
   entities:
+   - light.oslo_lamp
    - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
    - light.fibaro_system_fgd212_dimmer_2_level_42_0
    - light.brick_wall_accent
 kitchen_lighting:
   name: Kitchen
   entities:
+   - light.tradfri_bulb_e27_opal_1000lm
    - light.glass_cabinet_lights
    - light.fibaro_system_fgd212_dimmer_2_level_10_0
 bedroom_lighting:

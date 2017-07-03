@@ -7,11 +7,13 @@
     light.fibaro_system_fgd212_dimmer_2_level_42_0:
       state: on
       brightness: 180
-    switch.fibaro_system_fgwpef_wall_plug_switch_41_0: on
+    light.oslo_lamp:
+      state: on
+      brightness: 30
     switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2: on
     light.brick_wall_accent:
       state: on
-      brightness: 20    
+      brightness: 20
 - name: Bright mode
   entities:
     light.fibaro_system_fgd212_dimmer_2_level_10_0:
@@ -21,6 +23,9 @@
       state: on
       brightness: 255
     light.fibaro_system_fgd212_dimmer_2_level_42_0:
+      state: on
+      brightness: 255
+    light.oslo_lamp:
       state: on
       brightness: 255
     light.brick_wall_accent:
