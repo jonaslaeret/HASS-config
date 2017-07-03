@@ -66,7 +66,7 @@ light.aeotec_zw098_led_bulb_level_23_0:
   slider_theme:
     min: 0
     max: 255
-  friendly_name: Bed lamp
+  friendly_name: Guest room lamp
 light.fibaro_system_fgd212_dimmer_2_level_10_0:
   custom_ui_state_card: custom_light
   state_card_mode: break-slider
@@ -92,7 +92,7 @@ light.fibaro_system_fgd212_dimmer_2_level_29_0:
   slider_theme:
     min: 0
     max: 255
-  friendly_name: Guest lamp
+  friendly_name: Bedroom lamp
 light.fibaro_system_fgd212_dimmer_2_level_30_0:
   custom_ui_state_card: custom_light
   state_card_mode: break-slider
@@ -136,17 +136,17 @@ switch.fibaro_system_fgwpef_wall_plug_switch_3_0:
 sensor.fibaro_system_fgwpef_wall_plug_power_3_4:
   friendly_name: Living room radiator power
 switch.fibaro_system_fgwpef_wall_plug_switch_32_0:
-  friendly_name: Guest room radiator power
+  friendly_name: Bedroom radiator
 sensor.fibaro_system_fgwpef_wall_plug_power_32_4:
-  friendly_name: Guest room radiator power
+  friendly_name: Bedroom radiator power
 switch.fibaro_system_fgwpef_wall_plug_switch_7_0:
   friendly_name: Kitchen radiator
 sensor.fibaro_system_fgwpef_wall_plug_power_7_4:
   friendly_name: Kitchen radiator power
 switch.fibaro_system_fgwpef_wall_plug_switch_8_0:
-  friendly_name: Bedroom radiator
+  friendly_name: Guest room radiator
 sensor.fibaro_system_fgwpef_wall_plug_power_8_4:
-  friendly_name: Bedroom radiator power
+  friendly_name: Guest room radiator power
 media_player.m4strup:
   friendly_name: Chromecast
 media_player.bedroom:

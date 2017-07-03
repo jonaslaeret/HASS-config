@@ -136,7 +136,7 @@ climate:
 
   - platform: generic_thermostat
     name: bedroom
-    heater: switch.fibaro_system_fgwpef_wall_plug_switch_8_0
+    heater: switch.fibaro_system_fgwpef_wall_plug_switch_32_0
     target_sensor: sensor.bedroom_temperature
     target_temp: 20
     min_temp: 15
@@ -148,7 +148,7 @@ climate:
 
   - platform: generic_thermostat
     name: guestroom
-    heater: switch.fibaro_system_fgwpef_wall_plug_switch_32_0
+    heater: switch.fibaro_system_fgwpef_wall_plug_switch_8_0
     target_sensor: sensor.guest_room_temperature
     target_temp: 20
     min_temp: 15
