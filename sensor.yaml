@@ -5,8 +5,48 @@
    - Temperatures
    - Job Percentage
 - platform: miflora
-  name: Chili
+  name: Pepper
   mac: "C4:7C:8D:63:59:AD"
+  median: 3
+  monitored_conditions:
+   - temperature
+   - moisture
+   - light
+   - conductivity
+   - battery
+- platform: miflora
+  name: Ivy
+  mac: "C4:7C:8D:63:7E:2E"
+  median: 3
+  monitored_conditions:
+   - temperature
+   - moisture
+   - light
+   - conductivity
+   - battery
+- platform: miflora
+  name: Yucca
+  mac: "C4:7C:8D:63:8B:9D"
+  median: 3
+  monitored_conditions:
+   - temperature
+   - moisture
+   - light
+   - conductivity
+   - battery
+- platform: miflora
+  name: Parsley
+  mac: "C4:7C:8D:63:8B:34"
+  median: 3
+  monitored_conditions:
+   - temperature
+   - moisture
+   - light
+   - conductivity
+   - battery
+- platform: miflora
+  name: Pilea
+  mac: "C4:7C:8D:63:8B:D7"
   median: 3
   monitored_conditions:
    - temperature

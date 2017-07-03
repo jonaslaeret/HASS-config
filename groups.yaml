@@ -36,7 +36,11 @@ flower_view:
   view: yes
   icon: mdi:flower
   entities:
-    - group.chili
+    - group.pepper
+    - group.ivy
+    - group.yucca
+    - group.pilea
+    - group.parsley
 printer_view:
   view: yes
   icon: mdi:printer-3d
@@ -70,14 +74,46 @@ washing_machine:
   entities:
    - switch.fibaro_system_fgwpef_wall_plug_switch_41_0   
    - sensor.fibaro_system_fgwpef_wall_plug_power_41_4
-chili:
-  name: Chili plant
+pepper:
+  name: Pepper
   entities:
-    - sensor.chili_moisture
-    - sensor.chili_light_intensity
-    - sensor.chili_temperature
-    - sensor.chili_conductivity
-    - sensor.chili_battery
+    - sensor.pepper_moisture
+    - sensor.pepper_light_intensity
+    - sensor.pepper_temperature
+    - sensor.pepper_conductivity
+    - sensor.pepper_battery
+ivy:
+  name: Ivy
+  entities:
+    - sensor.ivy_moisture
+    - sensor.ivy_light_intensity
+    - sensor.ivy_temperature
+    - sensor.ivy_conductivity
+    - sensor.ivy_battery
+yucca:
+  name: Yucca
+  entities:
+    - sensor.yucca_moisture
+    - sensor.yucca_light_intensity
+    - sensor.yucca_temperature
+    - sensor.yucca_conductivity
+    - sensor.yucca_battery
+parsley:
+  name: Parsley
+  entities:
+    - sensor.parsley_moisture
+    - sensor.parsley_light_intensity
+    - sensor.parsley_temperature
+    - sensor.parsley_conductivity
+    - sensor.parsley_battery
+pilea:
+  name: Pilea
+  entities:
+    - sensor.pilea_moisture
+    - sensor.pilea_light_intensity
+    - sensor.pilea_temperature
+    - sensor.pilea_conductivity
+    - sensor.pilea_battery
 night_mode:
   name: Night mode
   entities:
