@@ -42,6 +42,7 @@ appliance_view:
   entities:
    - vacuum.the_chairman
    - group.printer
+   - group.washing_machine
 settings_view:
   view: yes
   icon: mdi:settings
@@ -50,7 +51,6 @@ settings_view:
    - group.sensor_pi
    - group.bedroom_alarm
    - group.away_mode_group
-   - group.washing_machine
 
 #GROUPS
 printer:
