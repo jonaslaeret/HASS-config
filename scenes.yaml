@@ -1,28 +1,28 @@
 - name: TV mode
   entities:
-    light.fibaro_system_fgd212_dimmer_2_level_10_0: off
-    light.fibaro_system_fgd212_dimmer_2_level_28_0:
+    light.kitchen_main_lamp_level: off
+    light.hallway_lamp_level:
       state: on
       brightness: 100
-    light.fibaro_system_fgd212_dimmer_2_level_42_0:
+    light.livingroom_lightchain_level:
       state: on
       brightness: 180
     light.oslo_lamp:
       state: on
       brightness: 30
-    switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2: on
+    switch.livingroom_globe_switch: on
     light.brick_wall_accent:
       state: on
       brightness: 20
 - name: Bright mode
   entities:
-    light.fibaro_system_fgd212_dimmer_2_level_10_0:
+    light.kitchen_main_lamp_level:
       state: on
       brightness: 255
-    light.fibaro_system_fgd212_dimmer_2_level_28_0:
+    light.hallway_lamp_level:
       state: on
       brightness: 255
-    light.fibaro_system_fgd212_dimmer_2_level_42_0:
+    light.livingroom_lightchain_level:
       state: on
       brightness: 255
     light.oslo_lamp:

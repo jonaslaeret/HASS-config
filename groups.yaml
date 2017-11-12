@@ -68,8 +68,9 @@ printer:
 washing_machine:
   name: Washing machine control
   entities:
-   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
-   - sensor.fibaro_system_fgwpef_wall_plug_power_41_4
+   - switch.bathroom_washingmachine_switch
+   - sensor.bathroom_washingmachine_power
+   - sensor.bathroom_washingmachine_energy
 pepper:
   name: Pepper
   entities:
@@ -168,15 +169,19 @@ yahoo_weather:
     - sensor.yweather_wind_speed
 all_entities:
   entities:
-   - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
-   - light.fibaro_system_fgd212_dimmer_2_level_42_0
-   - switch.fibaro_system_fgwpef_wall_plug_switch_41_0
-   - light.fibaro_system_fgd212_dimmer_2_level_10_0
-   - light.aeotec_zw098_led_bulb_level_23_0
-   - light.fibaro_system_fgd212_dimmer_2_level_30_0
-   - light.fibaro_system_fgd212_dimmer_2_level_31_0
-   - light.fibaro_system_fgd212_dimmer_2_level_28_0
-   - light.fibaro_system_fgd212_dimmer_2_level_29_0
+   - light.oslo_lamp
+   - light.tradfri_bulb_e27_opal_1000lm
+   - light.bathroom_cabinet_level
+   - light.bathroom_downlights_level
+   - light.bedroom_lamp_level
+   - light.guestroom_bulb_level
+   - light.hallway_lamp_level
+   - light.kitchen_main_lamp_level
+   - light.livingroom_lightchain_level
+   - light.camera_lamp
+   - light.tv
+   - light.desk_lamp
+   - switch.livingroom_globe_switch
    - climate.livingroom
    - climate.bedroom
    - climate.guestroom
@@ -184,14 +189,17 @@ all_lights:
   entities:
    - light.oslo_lamp
    - light.tradfri_bulb_e27_opal_1000lm
-   - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
-   - light.fibaro_system_fgd212_dimmer_2_level_42_0
-   - light.fibaro_system_fgd212_dimmer_2_level_10_0
-   - light.aeotec_zw098_led_bulb_level_23_0
-   - light.fibaro_system_fgd212_dimmer_2_level_30_0
-   - light.fibaro_system_fgd212_dimmer_2_level_31_0
-   - light.fibaro_system_fgd212_dimmer_2_level_28_0
-   - light.fibaro_system_fgd212_dimmer_2_level_29_0
+   - light.glass_cabinet_lights
+   - light.bathroom_cabinet_level
+   - light.bathroom_downlights_level
+   - light.bedroom_lamp_level
+   - light.guestroom_bulb_level
+   - light.hallway_lamp_level
+   - light.kitchen_main_lamp_level
+   - light.livingroom_lightchain_level
+   - switch.livingroom_globe_switch
+   - light.camera_lamp
+   - light.desk_lamp
 all_temp:
   entities:
    - climate.livingroom
@@ -201,8 +209,8 @@ livingroom_lighting:
   name: Living room
   entities:
    - light.oslo_lamp
-   - switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
-   - light.fibaro_system_fgd212_dimmer_2_level_42_0
+   - light.livingroom_lightchain_level
+   - switch.livingroom_globe_switch
    - light.brick_wall_accent
    - light.camera_lamp
 kitchen_lighting:
@@ -210,35 +218,35 @@ kitchen_lighting:
   entities:
    - light.tradfri_bulb_e27_opal_1000lm
    - light.glass_cabinet_lights
-   - light.fibaro_system_fgd212_dimmer_2_level_10_0
+   - light.kitchen_main_lamp_level
 bedroom_lighting:
   name: Bedroom
   entities:
-  - light.fibaro_system_fgd212_dimmer_2_level_29_0
+  - light.bedroom_lamp_level
   - light.tv
 bathroom_lighting:
   name: Bathroom
   entities:
-   - light.fibaro_system_fgd212_dimmer_2_level_30_0
-   - light.fibaro_system_fgd212_dimmer_2_level_31_0
+  - light.bathroom_cabinet_level
+  - light.bathroom_downlights_level
 hallway_lighting:
   name: Hallway
   entities:
-   - light.fibaro_system_fgd212_dimmer_2_level_28_0
+  - light.hallway_lamp_level
 guestroom_lighting:
   name: Guest room
   entities:
-   - light.aeotec_zw098_led_bulb_level_23_0
+  - light.guestroom_bulb_level
 livingroom_environment:
   name: Living room & Kitchen
   entities:
    - sensor.living_room_temperature
    - sensor.living_room_humidity
-   - switch.fibaro_system_fgwpef_wall_plug_switch_3_0
-   - switch.fibaro_system_fgwpef_wall_plug_switch_7_0
+   - switch.livingroom_heater_switch
+   - switch.kitchen_heater_switch
    - climate.livingroom
-   - sensor.fibaro_system_fgwpef_wall_plug_power_3_4
-   - sensor.fibaro_system_fgwpef_wall_plug_power_7_4
+   - sensor.livingroom_heater_power
+   - sensor.kitchen_heater_power
 bedroom_environment:
   name: Bedroom
   entities:
@@ -247,21 +255,21 @@ bedroom_environment:
    - sensor.bedroom_co2
    - switch.bedroom_motion
    - climate.bedroom
-   - switch.fibaro_system_fgwpef_wall_plug_switch_32_0
-   - sensor.fibaro_system_fgwpef_wall_plug_power_32_4
+   - switch.bedroom_heater_switch
+   - sensor.bedroom_heater_power
 guestroom_environment:
   name: Guest room
   entities:
    - sensor.guest_room_humidity
    - sensor.guest_room_temperature
-   - switch.fibaro_system_fgwpef_wall_plug_switch_8_0
-   - sensor.fibaro_system_fgwpef_wall_plug_power_8_4
+   - switch.guestroom_heater_switch
+   - sensor.guestroom_heater_power
    - climate.guestroom
 livingarea_radiators:
   name: Living area radiators
   entities:
-   - switch.fibaro_system_fgwpef_wall_plug_switch_3_0
-   - switch.fibaro_system_fgwpef_wall_plug_switch_7_0
+   - switch.livingroom_heater_switch
+   - switch.kitchen_heater_switch
 bedroom_alarm:
   name: Bedroom alarm
   entities:

@@ -6,13 +6,13 @@ motion_detected:
   sequence:
     - alias: Turn on Hallway lights
       service: light.turn_on
-      entity_id: light.fibaro_system_fgd212_dimmer_2_level_28_0
+      entity_id: light.hallway_lamp_level
       data:
         brightness: 20
     - delay: '00:05:00'
     - alias: Turn off Hallway lights
       service: light.turn_off
-      entity_id: light.fibaro_system_fgd212_dimmer_2_level_28_0
+      entity_id: light.hallway_lamp_level
 
 ############## Weather summary ##############
 weather_summary:
@@ -40,7 +40,7 @@ alarm_script_fade:
   sequence:
     - alias: Wakeup Light 1
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 10
     - alias: Sonos 1
@@ -50,7 +50,7 @@ alarm_script_fade:
         volume_level: 0.02
     - alias: Hallway lamp on
       service: light.turn_on
-      entity_id: light.fibaro_system_fgd212_dimmer_2_level_28_0
+      entity_id: light.hallway_lamp_level
     - alias: Bathroom lamp on
       service: light.turn_on
       entity_id: group.bathroom_lighting
@@ -60,7 +60,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 2
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 20
     - alias: Sonos 2
@@ -71,7 +71,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 3
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 30
     - alias: Sonos 3
@@ -82,7 +82,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 4
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 40
     - alias: Sonos 4
@@ -93,7 +93,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 5
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 50
     - alias: Sonos 5
@@ -117,7 +117,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 6
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 90
     - alias: Sonos 6
@@ -128,7 +128,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 7
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 130
     - alias: Sonos 7
@@ -139,7 +139,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 8
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 170
     - alias: Sonos 8
@@ -150,7 +150,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 9
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 210
     - alias: Sonos 9
@@ -161,7 +161,7 @@ alarm_script_fade:
     - delay: '00:{{ states.input_number.alarm_fader.state | int }}:00'
     - alias: Wakeup Light 10
       service: light.turn_on
-      entity_id: light.aeotec_zw098_led_bulb_level_23_0
+      entity_id: light.bedroom_lamp_level
       data:
         brightness: 255
     - alias: Sonos 10
