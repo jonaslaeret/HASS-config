@@ -121,6 +121,8 @@ octoprint:
 # Cameras
 camera: !include cameras.yaml
 
+# Plants
+plant: !include plants.yaml
 # Thermostats
 climate:
   - platform: generic_thermostat

@@ -103,6 +103,15 @@ light.fibaro_system_fgd212_dimmer_2_level_30_0:
   friendly_name: Bath downlights
 light.oslo_lamp:
   custom_ui_state_card: custom_light
+  friendly_name: Sweet pepper
+plant.basil:
+  friendly_name: basil
+plant.Yucca:
+  friendly_name: Yucca palm
+plant.pilea:
+  friendly_name: Pilea
+plant.ivy:
+  friendly_name: Ivy
   state_card_mode: break-slider
   stretch_slider: true
   slider_theme:

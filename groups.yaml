@@ -4,10 +4,14 @@ default_view:
   view: yes
   icon: mdi:home
   entities:
-    - group.time_date
     - group.yahoo_weather
     - group.blackout
     - group.scenes
+    - plant.pepper
+    - plant.ivy
+    - plant.yucca
+    - plant.pilea
+    - plant.basil
 lighting_view:
   view: yes
   icon: mdi:lightbulb
@@ -32,18 +36,9 @@ media_view:
    - media_player.bedroom
    - media_player.guest_room
    - media_player.m4strup
-flower_view:
+appliance_view:
   view: yes
-  icon: mdi:flower
-  entities:
-    - group.pepper
-    - group.ivy
-    - group.yucca
-    - group.pilea
-    - group.parsley
-printer_view:
-  view: yes
-  icon: mdi:printer-3d
+  icon: mdi:home-automation
   entities:
    - group.printer
 settings_view:
@@ -98,14 +93,14 @@ yucca:
     - sensor.yucca_temperature
     - sensor.yucca_conductivity
     - sensor.yucca_battery
-parsley:
-  name: Parsley
+basil:
+  name: Basil
   entities:
-    - sensor.parsley_moisture
-    - sensor.parsley_light_intensity
-    - sensor.parsley_temperature
-    - sensor.parsley_conductivity
-    - sensor.parsley_battery
+    - sensor.basil_moisture
+    - sensor.basil_light_intensity
+    - sensor.basil_temperature
+    - sensor.basil_conductivity
+    - sensor.basil_battery
 pilea:
   name: Pilea
   entities:
