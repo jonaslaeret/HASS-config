@@ -1,9 +1,15 @@
 - platform: mqtt
   name: "Brick wall accent"
-  state_topic: "state_fb_1-552304"
-  command_topic: "state_cmd_1-552304"
-  brightness_command_topic: "state_cmd_1-552304"
-  brightness_state_topic: "led1_fb-552304"
+  state_topic: "home/rgb2"
+  command_topic: "home/rgb2/set"
+  brightness: true
+  rgb: true
+  optimistic: false
+  effect: true
+  effect_list:
+    - solid
+    - rainbow
+  qos: 0
 - platform: mqtt
   name: "Camera lamp"
   state_topic: "state_fb_1-552711"
