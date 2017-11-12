@@ -36,6 +36,7 @@ http:
   api_password: !secret api_password
   trusted_networks:
     - !secret trusted_ip
+    - !secret trusted_mirror
 # Checks for available updates
 updater:
 
