@@ -74,6 +74,12 @@ switch:
     command_topic: "Mot664073"
     state_topic: "Mot664073"
 
+vacuum:
+  - platform: xiaomi_miio
+    host: !secret vacuum_ip
+    token: !secret vacuum_token
+    name: The Chairman
+
 # zwave
 zwave:
   device_config: !include zwave_device_config.yaml

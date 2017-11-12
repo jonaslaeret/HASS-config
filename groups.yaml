@@ -40,6 +40,7 @@ appliance_view:
   view: yes
   icon: mdi:home-automation
   entities:
+   - vacuum.the_chairman
    - group.printer
 settings_view:
   view: yes
