@@ -237,6 +237,7 @@ guestroom_lighting:
   name: Guest room
   entities:
   - light.guestroom_bulb_level
+  - light.desk_lamp
 livingroom_environment:
   name: Living room & Kitchen
   entities:
