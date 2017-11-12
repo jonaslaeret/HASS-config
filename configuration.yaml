@@ -14,6 +14,9 @@ homeassistant:
   customize: !include customize.yaml
 # Show links to resources in log and frontend
 
+customizer:
+  custom_ui: local
+
 # Enables the frontend
 frontend:
 
@@ -105,6 +108,13 @@ automation: !include automation.yaml
 # Text to speech
 tts:
   - platform: google
+
+panel_custom:
+  - name: floorplan
+    sidebar_title: Floorplan
+    sidebar_icon: mdi:home
+    url_path: floorplan
+    config: !include floorplan.yaml
 
 panel_iframe:
   ruter:

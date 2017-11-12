@@ -1,0 +1,229 @@
+      name: Floorplan
+      image: /local/custom_ui/floorplan/floorplan.svg
+      stylesheet: /local/custom_ui/floorplan/floorplan.css
+      warnings:
+      
+      hide_app_toolbar:
+
+      groups:
+        - name: Kitchen Lamp
+          entities:
+            - light.kitchen_main_lamp_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Kitchen Corner Lamp
+          entities:
+            - light.tradfri_bulb_e27_opal_1000lm
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Oslo Lamp
+          entities:
+            - light.oslo_lamp
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Kitchen Cabinet Lamp
+          entities:
+            - light.glass_cabinet_lights
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Bathroom Cabinet Lamp
+          entities:
+            - light.bathroom_cabinet_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Bathroom Downlights
+          entities:
+            - light.bathroom_downlights_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Bedroom Lamp
+          entities:
+            - light.bedroom_lamp_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Guest Room Lamp
+          entities:
+            - light.guestroom_bulb_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Hallway Lamp
+          entities:
+            - light.hallway_lamp_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Living Room Lightchain
+          entities:
+            - light.livingroom_lightchain_level
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Camera lamp
+          entities:
+            - light.camera_lamp
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Living Room Globe
+          entities:
+            - switch.livingroom_globe_switch
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Office desk LED strip
+          entities:
+            - light.desk_lamp
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'light-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Living Room Heater
+          entities:
+            - switch.livingroom_heater_switch
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'heat-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Bedroom Heater
+          entities:
+            - switch.bedroom_heater_switch
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'heat-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Guest Room Heater
+          entities:
+            - switch.guestroom_heater_switch
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'heat-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10
+        - name: Kitchen Heater
+          entities:
+            - switch.kitchen_heater_switch
+          states:
+            - state: 'off'
+              class: 'light-off'
+            - state: 'on'
+              class: 'heat-on'
+          state_transitions:
+            - name: On to off
+              from_state: 'on'
+              to_state: 'off'
+              duration: 10              
