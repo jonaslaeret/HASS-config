@@ -15,94 +15,54 @@ sensor.yweather_visibility:
   friendly_name: Visibility
 sensor.yweather_wind_speed:
   friendly_name: Wind speed
-switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2:
-  icon: mdi:lightbulb
-  friendly_name: Globe
-sensor.__luminance_43_3:
-  friendly_name: Luminance
-sensor.__relative_humidity_43_5:
-  friendly_name: Humidity
-sensor.__temperature_43_1:
-  friendly_name: Temperature
-sensor.__ultraviolet_43_27:
-  friendly_name: Ultraviolet
-sensor.__luminance_4_3:
-  friendly_name: Luminance
-sensor.__relative_humidity_4_5:
-  friendly_name: Humidity
-sensor.__temperature_4_1:
-  friendly_name: Temperature
-sensor.__ultraviolet_4_27:
-  friendly_name: Ultraviolet
-binary_sensor.aeotec_zw100_multisensor_6_sensor_44_0:
-  friendly_name: Motion
-sensor.aeotec_zw100_multisensor_6_luminance_44_3:
-  friendly_name: Luminance
-sensor.aeotec_zw100_multisensor_6_relative_humidity_44_5:
-  friendly_name: Humidity
-sensor.aeotec_zw100_multisensor_6_temperature_44_1:
-  friendly_name: Temperature
-sensor.aeotec_zw100_multisensor_6_ultraviolet_44_27:
-  friendly_name: Ultraviolet
 light.brick_wall_accent:
-  custom_ui_state_card: custom_light
+  custom_ui_state_card: state-card-custom-ui
   state_card_mode: break-slider
   stretch_slider: true
   slider_theme:
     min: 0
     max: 255
-light.__level_40_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Guest room brightness
-light.aeotec_zw098_led_bulb_level_23_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Guest room lamp
-light.fibaro_system_fgd212_dimmer_2_level_10_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Kitchen lamp
-light.fibaro_system_fgd212_dimmer_2_step_size_10_6:
-  friendly_name: Kitchen step
-light.fibaro_system_fgd212_dimmer_2_level_28_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Hallway lamp
-light.fibaro_system_fgd212_dimmer_2_level_29_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Bedroom lamp
-light.fibaro_system_fgd212_dimmer_2_level_30_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Bath downlights
 light.oslo_lamp:
-  custom_ui_state_card: custom_light
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Oslo lamp
+light.tradfri_bulb_e27_opal_1000lm:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Kitchen corner
+light.desk_lamp:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Desk lamp
+light.glass_cabinet_lights:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Glass cabinet lights
+light.camera_lamp:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Camera lamp
+plant.pepper:
   friendly_name: Sweet pepper
 plant.basil:
   friendly_name: basil
@@ -112,53 +72,123 @@ plant.pilea:
   friendly_name: Pilea
 plant.ivy:
   friendly_name: Ivy
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Oslo lamp
-light.tradfri_bulb_e27_opal_1000lm:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Kitchen corner
-light.fibaro_system_fgd212_dimmer_2_level_31_0:
-  friendly_name: Bath cabinet
-light.fibaro_system_fgd212_dimmer_2_level_42_0:
-  custom_ui_state_card: custom_light
-  state_card_mode: break-slider
-  stretch_slider: true
-  slider_theme:
-    min: 0
-    max: 255
-  friendly_name: Light chain
-switch.fibaro_system_fgwpef_wall_plug_switch_41_0:
-  friendly_name: Washing machine
-sensor.fibaro_system_fgwpef_wall_plug_power_41_4:
-  friendly_name: Washing machine power
-switch.fibaro_system_fgwpef_wall_plug_switch_3_0:
-  friendly_name: Living room radiator
-sensor.fibaro_system_fgwpef_wall_plug_power_3_4:
-  friendly_name: Living room radiator power
-switch.fibaro_system_fgwpef_wall_plug_switch_32_0:
-  friendly_name: Bedroom radiator
-sensor.fibaro_system_fgwpef_wall_plug_power_32_4:
-  friendly_name: Bedroom radiator power
-switch.fibaro_system_fgwpef_wall_plug_switch_7_0:
-  friendly_name: Kitchen radiator
-sensor.fibaro_system_fgwpef_wall_plug_power_7_4:
-  friendly_name: Kitchen radiator power
-switch.fibaro_system_fgwpef_wall_plug_switch_8_0:
-  friendly_name: Guest room radiator
-sensor.fibaro_system_fgwpef_wall_plug_power_8_4:
-  friendly_name: Guest room radiator power
 media_player.m4strup:
   friendly_name: Chromecast
 media_player.bedroom:
   friendly_name: Sonos bedroom
 media_player.guest_room:
-  friendly_name: Sonos kitchen
+  friendly_name: Sonos guest room
+light.bathroom_cabinet_level:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  extra_badge:
+    entity_id: sensor.bathroom_cabinet_power
+    attribute: power_consumption
+    unit: W
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Bathroom cabinet lights
+light.bathroom_downlights_level:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  extra_badge:
+    entity_id: sensor.bathroom_downlights_power
+    attribute: power_consumption
+    unit: W
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Bathroom downlights
+light.bedroom_lamp_level:
+  custom_ui_state_card: state-card-custom-ui
+  state_card_mode: break-slider
+  stretch_slider: true
+  extra_badge:
+    entity_id: sensor.bedroom_lamp_power
+    attribute: power_consumption
+    unit: W
+  slider_theme:
+    min: 0
+    max: 255
+  friendly_name: Bedroom lamp
+light.guestroom_bulb_level:
+    custom_ui_state_card: state-card-custom-ui
+    state_card_mode: break-slider
+    stretch_slider: true
+    slider_theme:
+      min: 0
+      max: 255
+    friendly_name: Guest room lamp
+light.hallway_lamp_level:
+    custom_ui_state_card: state-card-custom-ui
+    state_card_mode: break-slider
+    stretch_slider: true
+    extra_badge:
+      entity_id: sensor.hallway_lamp_power
+      attribute: power_consumption
+      unit: W
+    slider_theme:
+      min: 0
+      max: 255
+    friendly_name: Hallway downlights
+light.kitchen_main_lamp_level:
+    custom_ui_state_card: state-card-custom-ui
+    state_card_mode: break-slider
+    stretch_slider: true
+    extra_badge:
+      entity_id: sensor.kitchen_main_lamp_power
+      attribute: power_consumption
+      unit: W
+    slider_theme:
+      min: 0
+      max: 255
+    friendly_name: Kitchen lamp
+light.livingroom_lightchain_level:
+    custom_ui_state_card: state-card-custom-ui
+    state_card_mode: break-slider
+    stretch_slider: true
+    extra_badge:
+      entity_id: sensor.livingroom_lightchain_power
+      attribute: power_consumption
+      unit: W
+    slider_theme:
+      min: 0
+      max: 255
+    friendly_name: Light chain
+sensor.bedroom_heater_energy:
+    friendly_name: Bedroom heater energy used
+sensor.bedroom_heater_power:
+    friendly_name: Bedroom heater power output
+sensor.guestroom_heater_energy:
+    friendly_name: Guest room heater energy used
+sensor.guestroom_heater_power:
+    friendly_name: Guest room heater power output
+sensor.kitchen_heater_energy:
+    friendly_name: Kitchen heater energy used
+sensor.kitchen_heater_power:
+    friendly_name: Kitchen heater power output
+sensor.livingroom_heater_energy:
+    friendly_name: Living room heater energy used
+sensor.livingroom_heater_power:
+    friendly_name: Living room heater power output
+sensor.bathroom_washingmachine_energy:
+    friendly_name: Washing machine energy used
+sensor.bathroom_washingmachine_power:
+    friendly_name: Washing machine power output
+switch.bathroom_washingmachine_switch:
+    custom_ui_state_card: state-card-custom-ui
+    confirm_controls_show_lock: true
+    friendly_name: Washing machine switch
+switch.bedroom_heater_switch:
+    friendly_name: Bedroom heater
+switch.guestroom_heater_switch:
+    friendly_name: Guest room heater
+switch.kitchen_heater_switch:
+    friendly_name: Kitchen heater
+switch.livingroom_heater_switch:
+    friendly_name: Living room heater
+switch.livingroom_globe_switch:
+    friendly_name: Globe
