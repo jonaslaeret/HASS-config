@@ -1,0 +1,193 @@
+- id: someoneHome
+  alias: Someone is home
+  trigger:
+    platform: time
+    minutes: /1
+    seconds: 0
+  condition:
+  - condition: state
+    entity_id: group.all_lights
+    state: 'on'
+  action:
+  - alias: Home
+    service: input_boolean.turn_on
+    entity_id: input_boolean.ishome
+- id: noneAtHome
+  alias: Noone is home
+  trigger:
+    platform: time
+    minutes: /1
+    seconds: 0
+  condition:
+  - condition: state
+    entity_id: group.all_lights
+    state: 'off'
+  action:
+  - alias: Noone home
+    service: input_boolean.turn_off
+    entity_id: input_boolean.ishome
+- id: activateMirror
+  alias: Turn mirror on
+  trigger:
+    platform: state
+    entity_id: input_boolean.ishome
+    from: 'off'
+    to: 'on'
+  action:
+  - alias: Turn on mirror
+    service: light.turn_on
+    data:
+      entity_id: light.tv
+      brightness: 80
+- id: deactivateMirror
+  alias: Turn mirror off
+  trigger:
+    platform: state
+    entity_id: input_boolean.ishome
+    from: 'on'
+    to: 'off'
+  action:
+  - alias: Turn off mirror
+    service: light.turn_off
+    entity_id: light.tv
+- id: bedroomMotion
+  alias: Detected bedroom motion
+  trigger:
+    platform: state
+    entity_id: switch.bedroom_motion
+    from: 'off'
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: input_boolean.night_mode_toggle
+    state: 'on'
+  action:
+  - service: script.turn_on
+    entity_id: script.motion_detected
+- id: nightModeOn
+  alias: Activate night mode
+  trigger:
+    platform: time
+    minutes: /1
+    seconds: 0
+  condition:
+  - condition: template
+    value_template: '{{ now().strftime("%H:%M") == states.sensor.night_time.state
+      }}'
+  action:
+  - service: input_boolean.turn_on
+    entity_id: input_boolean.night_mode_toggle
+  - service: input_number.select_value
+    data_template:
+      entity_id: input_number.day_temp_gr
+      value: '{{ states.climate.guestroom.attributes.temperature  }}'
+  - service: input_number.select_value
+    data_template:
+      entity_id: input_number.day_temp_lr
+      value: '{{ states.climate.livingroom.attributes.temperature  }}'
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.livingroom
+      temperature: '{{ states.input_number.night_temp_lr.state }}'
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.guestroom
+      temperature: '{{ states.input_number.night_temp_gr.state }}'
+- id: nightModeOff
+  alias: Activate day mode
+  trigger:
+    platform: time
+    minutes: /1
+    seconds: 0
+  condition:
+  - condition: template
+    value_template: '{{ now().strftime("%H:%M") == states.sensor.day_time.state }}'
+  action:
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.night_mode_toggle
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.livingroom
+      temperature: '{{ states.input_number.day_temp_lr.state}}'
+  - service: climate.set_temperature
+    data_template:
+      entity_id: climate.guestroom
+      temperature: '{{ states.input_number.day_temp_gr.state}}'
+- id: allLightsOff
+  alias: All lights off
+  trigger:
+    platform: state
+    entity_id: input_boolean.all_lights_off
+    from: 'off'
+    to: 'on'
+  action:
+  - service: light.turn_off
+  - service: switch.turn_off
+    entity_id: switch.livingroom_globe_switch
+  - service: input_boolean.turn_off
+    entity_id: input_boolean.all_lights_off
+- id: awayModeOn
+  alias: Away mode on
+  trigger:
+    platform: state
+    entity_id: input_boolean.away_mode
+    from: 'off'
+    to: 'on'
+  action:
+    service: climate.set_temperature
+    data:
+      temperature: 5
+- id: awayModeOff
+  alias: Away mode off
+  trigger:
+    platform: state
+    entity_id: input_boolean.away_mode
+    from: 'on'
+    to: 'off'
+  action:
+    service: climate.set_temperature
+    data:
+      temperature: 20
+- id: bedroomAlarm
+  alias: Bedroom alarm
+  trigger:
+    platform: time
+    minutes: /1
+    seconds: 0
+  condition:
+    condition: and
+    conditions:
+    - condition: template
+      value_template: '{{ now().strftime("%H:%M") == states.sensor.alarm_time.state
+        }}'
+    - condition: or
+      conditions:
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: input_boolean.bedroom_alarm_switch
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.bedroom_alarm_weekday
+          state: 'on'
+        - condition: time
+          weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: and
+        conditions:
+        - condition: state
+          entity_id: input_boolean.bedroom_alarm_switch
+          state: 'on'
+        - condition: state
+          entity_id: input_boolean.bedroom_alarm_weekday
+          state: 'off'
+  action:
+  - service: script.turn_on
+    entity_id: script.alarm_script_fade
+  - service: script.turn_on
+    entity_id: script.sonos_play_radio
+    

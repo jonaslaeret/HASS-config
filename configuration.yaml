@@ -103,7 +103,7 @@ group: !include groups.yaml
 # Scripts
 script: !include script.yaml
 # Automation.
-automation: !include automation.yaml
+automation old: !include automations.yaml
 
 # Text to speech
 tts:

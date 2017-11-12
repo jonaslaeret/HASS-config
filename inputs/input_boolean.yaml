@@ -1,6 +1,8 @@
 ################input_boolean.yaml##############
 night_mode_toggle:
   name: Night mode
+ishome:
+  name: Someone at home
 bedroom_alarm_switch:
   name: Bedroom alarm
   initial: off
