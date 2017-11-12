@@ -1,7 +1,8 @@
 #####################automation.yaml##########################
 
 ############# Motion activated lights #################
-- alias: 'Detected bedroom motion'
+- id: bedroomMotion
+  alias: 'Detected bedroom motion'
   trigger:
     platform: state
     entity_id: switch.bedroom_motion
@@ -15,17 +16,17 @@
     - service: script.turn_on
       entity_id: script.motion_detected
 
-########## Wall plug corrections #############
-
 #################### Night mode ###################
-- alias: 'Activate night mode'
+- id: nightModeOn
+  alias: 'Activate night mode'
   trigger:
     platform: time
     minutes: '/1'
     seconds: 0
   condition:
     - condition: template
-      value_template: '{{ states.sensor.current_time.state == states.sensor.night_time.state }}'
+      value_template: '{{ now().strftime("%H:%M") == states.sensor.night_time.state }}'
+      #value_template: '{{ states.sensor.current_time.state == states.sensor.night_time.state }}'
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.night_mode_toggle
@@ -46,14 +47,16 @@
         entity_id: climate.guestroom
         temperature: '{{ states.input_number.night_temp_gr.state }}'
 
-- alias: 'Activate day mode'
+- id: nightModeOff
+  alias: 'Activate day mode'
   trigger:
     platform: time
     minutes: '/1'
     seconds: 0
   condition:
     - condition: template
-      value_template: '{{ states.sensor.current_time.state == states.sensor.day_time.state }}'
+      value_template: '{{ now().strftime("%H:%M") == states.sensor.day_time.state }}'
+      #value_template: '{{ states.sensor.current_time.state == states.sensor.day_time.state }}'
   action:
     - service: input_boolean.turn_off
       entity_id: input_boolean.night_mode_toggle
@@ -67,7 +70,8 @@
         temperature: '{{ states.input_number.day_temp_gr.state}}'
 
 ############# Turn off all lights #################
-- alias: 'All lights off'
+- id: allLightsOff
+  alias: 'All lights off'
   trigger:
     platform: state
     entity_id: input_boolean.all_lights_off
@@ -76,12 +80,13 @@
   action:
     - service: light.turn_off
     - service: switch.turn_off
-      entity_id: switch.fibaro_system_fgs212_switch_3kw_switch_38_0_2
+      entity_id: switch.livingroom_globe_switch
     - service: input_boolean.turn_off
       entity_id: input_boolean.all_lights_off
 
 ############# Away mode #################
-- alias: 'Away mode on'
+- id: awayModeOn
+  alias: 'Away mode on'
   trigger:
     platform: state
     entity_id: input_boolean.away_mode
@@ -91,7 +96,9 @@
     service: climate.set_temperature
     data:
       temperature: 5
-- alias: 'Away mode off'
+
+- id: awayModeOff
+  alias: 'Away mode off'
   trigger:
     platform: state
     entity_id: input_boolean.away_mode
@@ -103,7 +110,8 @@
       temperature: 20
 
 ############# Bedroom alarm #################
-- alias: 'Bedroom alarm'
+- id: bedroomAlarm
+  alias: 'Bedroom alarm'
   trigger:
     platform: time
     minutes: '/1'
@@ -112,7 +120,8 @@
     condition: and
     conditions:
       - condition: template
-        value_template: '{{ states.sensor.current_time.state == states.sensor.alarm_time.state }}'
+        value_template: '{{ now().strftime("%H:%M") == states.sensor.alarm_time.state }}'
+        #value_template: '{{ states.sensor.current_time.state == states.sensor.alarm_time.state }}'
       - condition: or
         conditions:
           - condition: and
