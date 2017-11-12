@@ -9,3 +9,4 @@
 !*/
 www/custom_ui/.gitignore
 secrets.yaml
+custom_components/customizer/services.yaml
