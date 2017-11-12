@@ -147,7 +147,7 @@ climate:
     heater: group.livingarea_radiators
     target_sensor: sensor.living_room_temperature
     target_temp: 20
-    min_temp: 15
+    min_temp: 5
     max_temp: 25
     min_cycle_duration:
       seconds: 5
@@ -158,8 +158,8 @@ climate:
     name: bedroom
     heater: switch.bedroom_heater_switch
     target_sensor: sensor.bedroom_temperature
-    target_temp: 20
-    min_temp: 15
+    target_temp: 18.5
+    min_temp: 5
     max_temp: 25
     min_cycle_duration:
       seconds: 5
@@ -171,7 +171,7 @@ climate:
     heater: switch.guestroom_heater_switch
     target_sensor: sensor.guest_room_temperature
     target_temp: 20
-    min_temp: 15
+    min_temp: 5
     max_temp: 25
     min_cycle_duration:
       seconds: 5
