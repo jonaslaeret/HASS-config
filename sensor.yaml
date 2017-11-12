@@ -145,10 +145,10 @@
   sensors:
     alarm_hour:
       friendly_name: 'Hour'
-      value_template: '{{ states.input_slider.alarmhour.state|round(0)|string }}'
+      value_template: '{{ states.input_number.alarmhour.state|round(0)|string }}'
     alarm_minutes:
       friendly_name: 'Minutes'
-      value_template: '{{ states.input_slider.alarmminutes.state|round(0)|string }}'
+      value_template: '{{ states.input_number.alarmminutes.state|round(0)|string }}'
     alarm_time:
       friendly_name: 'Alarm'
       value_template: '{% if states.input_select.bedroom_alarm_hours.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_hours.state|round(0)|string }}:{% if states.input_select.bedroom_alarm_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_select.bedroom_alarm_min.state|round(0)|string }}'
@@ -156,10 +156,10 @@
       value_template: '{{ now().strftime("%H:%M")}}'
     day_time:
       friendly_name: 'Day time'
-      value_template: '{% if states.input_slider.day_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.day_time_hr.state|round(0)|string }}:{% if states.input_slider.day_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.day_time_min.state|round(0)|string }}'
+      value_template: '{% if states.input_number.day_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.day_time_hr.state|round(0)|string }}:{% if states.input_number.day_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.day_time_min.state|round(0)|string }}'
     night_time:
       friendly_name: 'Night time'
-      value_template: '{% if states.input_slider.night_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_hr.state|round(0)|string }}:{% if states.input_slider.night_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_slider.night_time_min.state|round(0)|string }}'
+      value_template: '{% if states.input_number.night_time_hr.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.night_time_hr.state|round(0)|string }}:{% if states.input_number.night_time_min.state|round(0)|string|length == 1 %}0{% endif %}{{ states.input_number.night_time_min.state|round(0)|string }}'
 - platform: template
   sensors:
     livingroom_setpoint:

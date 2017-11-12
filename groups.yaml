@@ -113,10 +113,10 @@ pilea:
 night_mode:
   name: Night mode
   entities:
-    - input_slider.night_time_hr
-    - input_slider.night_time_min
-    - input_slider.day_time_hr
-    - input_slider.day_time_min
+    - input_number.night_time_hr
+    - input_number.night_time_min
+    - input_number.day_time_hr
+    - input_number.day_time_min
 scenes:
   name: Scenes
   entities:
@@ -267,7 +267,7 @@ bedroom_alarm:
   entities:
    - input_boolean.bedroom_alarm_switch
    - input_boolean.bedroom_alarm_weekday
-   - input_slider.alarm_fader
+   - input_number.alarm_fader
    - input_select.bedroom_alarm_hours
    - input_select.bedroom_alarm_min
 away_mode_group:

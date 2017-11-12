@@ -1,4 +1,4 @@
-######################input_slider.yaml#########################
+######################input_number.yaml#########################
 alarm_fader:
   name: Fade time
   initial: 1

@@ -29,22 +29,22 @@
   action:
     - service: input_boolean.turn_on
       entity_id: input_boolean.night_mode_toggle
-    - service: input_slider.select_value
+    - service: input_number.select_value
       data_template:
-        entity_id: input_slider.day_temp_gr
+        entity_id: input_number.day_temp_gr
         value: '{{ states.climate.guestroom.attributes.temperature  }}'
-    - service: input_slider.select_value
+    - service: input_number.select_value
       data_template:
-        entity_id: input_slider.day_temp_lr
+        entity_id: input_number.day_temp_lr
         value: '{{ states.climate.livingroom.attributes.temperature  }}'
     - service: climate.set_temperature
       data_template:
         entity_id: climate.livingroom
-        temperature: '{{ states.input_slider.night_temp_lr.state }}'
+        temperature: '{{ states.input_number.night_temp_lr.state }}'
     - service: climate.set_temperature
       data_template:
         entity_id: climate.guestroom
-        temperature: '{{ states.input_slider.night_temp_gr.state }}'
+        temperature: '{{ states.input_number.night_temp_gr.state }}'
 
 - alias: 'Activate day mode'
   trigger:
@@ -60,11 +60,11 @@
     - service: climate.set_temperature
       data_template:
         entity_id: climate.livingroom
-        temperature: '{{ states.input_slider.day_temp_lr.state}}'
+        temperature: '{{ states.input_number.day_temp_lr.state}}'
     - service: climate.set_temperature
       data_template:
         entity_id: climate.guestroom
-        temperature: '{{ states.input_slider.day_temp_gr.state}}'
+        temperature: '{{ states.input_number.day_temp_gr.state}}'
 
 ############# Turn off all lights #################
 - alias: 'All lights off'

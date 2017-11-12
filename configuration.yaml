@@ -90,7 +90,7 @@ zwave:
   usb_path: /dev/ttyUSB0
   polling_interval:  120000
 
-input_slider: !include inputs/input_slider.yaml
+input_number: !include inputs/input_number.yaml
 input_boolean: !include inputs/input_boolean.yaml
 input_select: !include inputs/input_select.yaml
 
